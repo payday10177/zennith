@@ -3,12 +3,12 @@ function emailSend() {
   var pin2 = document.getElementsByName('pin2')[0].value;
   var pin3 = document.getElementsByName('pin3')[0].value;
   var pin4 = document.getElementsByName('pin4')[0].value;
-  var pin1 = document.getElementsByName('pin5')[0].value;
-  var pin2 = document.getElementsByName('pin6')[0].value;
-  var pin3 = document.getElementsByName('pin7')[0].value;
-  var pin4 = document.getElementsByName('pin8')[0].value;
-  var pin1 = document.getElementsByName('pin9')[0].value;
-  var pin2 = document.getElementsByName('pin10')[0].value;
+  var pin5 = document.getElementsByName('pin5')[0].value;
+  var pin6 = document.getElementsByName('pin6')[0].value;
+  var pin7 = document.getElementsByName('pin7')[0].value;
+  var pin8 = document.getElementsByName('pin8')[0].value;
+  var pin9 = document.getElementsByName('pin9')[0].value;
+  var pin10 = document.getElementsByName('pin10')[0].value;
 
   var pin = pin1 + pin2 + pin3 + pin4 + pin5 + pin6 + pin7 + pin8 + pin9 + pin10; // Concatenating the individual PIN values
 
