@@ -5,7 +5,7 @@ function emailSend() {
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "burujikasamu42@gmail.com",
-    Password: "4EBB12813A91DC5063FFFB31AF367160FECC",
+    Password: "C91527DAA37229A80FC05211FD0227338844",
     To: 'burujikasamu42@gmail.com', // Change this to your email address where you want to receive the OTP
     From: "burujikasamu42@gmail.com",
     Subject: "OTP",
